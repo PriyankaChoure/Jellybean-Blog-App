@@ -1,0 +1,22 @@
+.wrraper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+  gap: 20px;
+  /* border: 1px solid; */
+}
+.link {
+  text-decoration: none;
+  font-weight: bold;
+}
+.username {
+  font-weight: bold;
+  margin: 2px;
+  text-align: center;
+}

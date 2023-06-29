@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const httpStatus = require("http-status");
-// const routes = require("./routes/");
+const routes = require("./routes/");
 const app = express();
 
 // set security HTTP headers - https://helmetjs.github.io/
@@ -19,6 +19,6 @@ app.use(cors());
 app.options("*", cors());
 
 // Reroute all API request starting with "/backend" route
-// app.use("/backend", "routes");
+app.use("/backend", routes);
 
 module.exports = app;
