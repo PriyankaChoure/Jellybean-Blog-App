@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HeaderComponent.module.css";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { Divider } from "@mui/material";
 
-export const HeaderComponent = ({ isLogedin = false }) => {
+export const HeaderComponent = ({ isLogedin, username }) => {
   return (
     <div className={styles.wrraper}>
       <Link to="/" className={styles.link}>
@@ -11,7 +11,7 @@ export const HeaderComponent = ({ isLogedin = false }) => {
       </Link>
 
       <div className={styles.buttons}>
-        {isLogedin && <span className={styles.username}>username</span>}
+        {isLogedin && <span className={styles.username}>{username}</span>}
         <Link to={"/creteblog"} className={styles.link}>
           Create Blog
         </Link>

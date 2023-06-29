@@ -7,7 +7,8 @@ import { useState } from "react";
 
 function App() {
   const [isLogedin, setIsLogedin] = useState(false);
-  const [username, setUserName] = useState("");
+  const [userDetail, setUserDetail] = useState({ username: "", id: "" });
+  console.log("in app - userDetails - ", userDetail);
   return (
     <StyledEngineProvider injectFirst>
       <SnackbarProvider
@@ -19,15 +20,18 @@ function App() {
         preventDuplicate
       >
         <>
-          <HeaderComponent />
+          <HeaderComponent
+            isLogedin={isLogedin}
+            username={userDetail.username}
+          />
           <Divider />
           <Outlet
             context={{
               outletContextData: {
                 isLogedin,
                 setIsLogedin,
-                username,
-                setUserName,
+                userDetail,
+                setUserDetail,
               },
             }}
           />
