@@ -28,3 +28,20 @@ export const login = async (userData) => {
     console.log(err);
   }
 };
+
+// api call to create new blog
+export const createNewBlog = async (blog) => {
+  const { title, desc, ownerid, ownername } = blog;
+  const URL = `${BACKEND_URL}blog`;
+  try {
+    const responseData = await axios.post(URL, {
+      ownerid,
+      ownername,
+      title,
+      desc,
+    });
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};

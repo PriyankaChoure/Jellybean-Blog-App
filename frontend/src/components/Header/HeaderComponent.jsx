@@ -12,7 +12,7 @@ export const HeaderComponent = ({ isLogedin, username }) => {
 
       <div className={styles.buttons}>
         {isLogedin && <span className={styles.username}>{username}</span>}
-        <Link to={"/creteblog"} className={styles.link}>
+        <Link to={"/createBlog"} className={styles.link}>
           Create Blog
         </Link>
 
