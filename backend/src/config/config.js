@@ -25,6 +25,7 @@ module.exports = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       autoIndex: true,
+      useFindAndModify: false,
     },
   },
 };

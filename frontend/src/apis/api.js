@@ -45,3 +45,65 @@ export const createNewBlog = async (blog) => {
     console.log(err);
   }
 };
+
+// api call to get all Blogs
+export const fetchAllBlogs = async () => {
+  const URL = `${BACKEND_URL}blog`;
+  try {
+    const responseData = await axios.get(URL);
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// api call to update like
+export const updateLike = async (id) => {
+  const URL = `${BACKEND_URL}blog/up/${id}`;
+  try {
+    console.log("in api call url- ", URL);
+    const responseData = await axios.patch(URL);
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// api call to update like
+export const updateDisLike = async (id) => {
+  const URL = `${BACKEND_URL}blog/down/${id}`;
+  try {
+    const responseData = await axios.patch(URL);
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// api call to create new comment
+export const createNewComment = async (newComment) => {
+  const { blogid, userid, username, comment } = newComment;
+  const URL = `${BACKEND_URL}comment`;
+  try {
+    const responseData = await axios.post(URL, {
+      blogid,
+      userid,
+      username,
+      comment,
+    });
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// api call to get all comment of any blog
+export const fetchAllcomment = async (id) => {
+  const URL = `${BACKEND_URL}comment/${id}`;
+  try {
+    const responseData = await axios.get(URL);
+    return responseData;
+  } catch (err) {
+    console.log(err);
+  }
+};

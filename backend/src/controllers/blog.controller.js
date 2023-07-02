@@ -32,7 +32,43 @@ const getAllBlogs = async (req, res) => {
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json(err);
   }
 };
+
+const updateLike = async (req, res) => {
+  try {
+    const blogId = req.params.id;
+    console.log("in controller like -", blogId);
+    const blog = await BlogService.updateUpLike(blogId);
+    console.log("updated blog", blog);
+    if (blog) {
+      res.status(httpStatus.OK).json(blog);
+    } else {
+      res.status(httpStatus.BAD_REQUEST).json("no blog found");
+    }
+  } catch (err) {
+    console.log("error to update blog  -", err);
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).json(err);
+  }
+};
+
+const updateDisLike = async (req, res) => {
+  try {
+    const blogId = req.params.id;
+    console.log("in controller like -", blogId);
+    const blog = await BlogService.updateDownLike(blogId);
+    console.log("updated blog", blog);
+    if (blog) {
+      res.status(httpStatus.OK).json(blog);
+    } else {
+      res.status(httpStatus.BAD_REQUEST).json("no blog found");
+    }
+  } catch (err) {
+    console.log("error to update blog  -", err);
+    res.status(httpStatus.INTERNAL_SERVER_ERROR).json(err);
+  }
+};
 module.exports = {
   createNewBlog,
   getAllBlogs,
+  updateLike,
+  updateDisLike,
 };

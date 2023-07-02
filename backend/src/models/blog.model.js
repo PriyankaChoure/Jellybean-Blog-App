@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 const BlogSchema = new mongoose.Schema(
   {
-    // ownerid,
-    //   ownername,
-    //   title,
-    //   desc,
     ownerid: {
       type: String,
       required: true,

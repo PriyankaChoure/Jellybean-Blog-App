@@ -1,0 +1,27 @@
+.wrapper {
+  border: 2px solid;
+  width: 80%;
+  margin: 10px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.title {
+  font-size: x-large;
+  color: maroon;
+}
+.desc {
+  font-size: largeer;
+  color: grey;
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.dialog {
+  width: 30vw;
+  /* border: 2px solid; */
+  /* background-color: red; */
+}

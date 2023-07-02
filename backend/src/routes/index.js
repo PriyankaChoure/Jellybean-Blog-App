@@ -8,4 +8,8 @@ routes.use("/auth", authRoute);
 const blogRoute = require("./blog.route");
 routes.use("/blog", blogRoute);
 
+// routes for comment
+const commentRoute = require("./comment.route");
+routes.use("/comment", commentRoute);
+
 module.exports = routes;

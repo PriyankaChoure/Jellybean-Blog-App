@@ -6,4 +6,7 @@ router.post("/", blogController.createNewBlog);
 
 router.get("/", blogController.getAllBlogs);
 
+router.patch("/up/:id", blogController.updateLike);
+router.patch("/down/:id", blogController.updateDisLike);
+
 module.exports = router;

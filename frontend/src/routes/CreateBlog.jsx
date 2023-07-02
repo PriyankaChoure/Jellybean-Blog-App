@@ -25,6 +25,7 @@ export const CreateBlog = () => {
       enqueueSnackbar("Blog Created Successsfully", {
         variant: "success",
       });
+      navigate("/");
     } catch (err) {
       console.log(err);
       enqueueSnackbar(err.response.data.message, {
